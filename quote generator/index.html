@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote generator</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+        }
+
+
+        img{
+            height: 40px;
+        }
+
+        .all{
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            position: relative;
+        }
+
+        h1{
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 300;
+            font-size: 30px;
+            word-wrap: break-word;
+            letter-spacing: 10px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .assets{
+            position: absolute;
+            left: 40%;
+            width: 60%;
+            top: 35%;
+            transform: translate(-50%,-50%);
+
+        }
+
+        button{
+            margin-top: 20px;
+            padding: 13px;
+            border: 2px solid rgb(21, 132, 223);
+            background-color: rgb(21, 132, 223);
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            border-radius: 10px;
+        }
+
+        @media only screen and (max-width: 600px){
+            h1{
+                font-size: 20px;
+            }
+
+            img{
+                height: 20px;
+            }
+
+            button{
+                padding: 6px;
+                font-size: 13px;
+            }
+        }
+
+    </style>
+    <div class="all">
+        <div class="assets">
+            <img src="./quote.svg">
+            <h1 id="change">Quotes are for the wise ones!</h1>
+            <h1 id="eee"></h1>
+            <button onclick="chng()">New Quote</button>
+        </div>
+    </div>
+
+    <script>
+        function chng(){
+            const quotesss = [{quote:'Love For All, Hatred For None.', author:'– Khalifatul Masih III'}, {quote:'Change the world by being yourself.', author:'– Amy Poehler'}, {quote:'Every moment is a fresh beginning.', author:'– T.S Eliot'},{quote:'Never regret anything that made you smile.', author:'– Mark Twain'}, {quote:'Die with memories, not dreams.', author:'– Unknown'},{quote:'Aspire to inspire before we expire.', author:'– Unknown'}, {quote:'Everything you can imagine is real. ', author:'– Pablo Picasso'}, {quote:'Simplicity is the ultimate sophistication.', author:'– Leonardo da Vinci'}, {quote:'Whatever you do, do it well.', author:'– Walt Disney'}, {quote:'What we think, we become.', author:'– Buddha'}];
+            
+            let x = Math.floor(Math.random() * quotesss.length);
+
+            document.getElementById('change').innerText = quotesss[x].quote;
+            document.getElementById('eee').innerText = quotesss[x].author;
+            
+        }
+    </script>
+</body>
+</html>
